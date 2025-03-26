@@ -1,12 +1,21 @@
-import { Box, Typography } from '@mui/material'
+import { Box } from '@mui/material'
 import { Outlet } from 'react-router-dom'
+import SidebarLayout from './components/SidebarLayout'
+import HeaderLayout from './components/HeaderLayout'
 
 const MainLayout = () => {
   return (
     <Box>
-      <Typography variant='h1'>MainLayout</Typography>
-      <Box>
-        <Outlet />
+      <HeaderLayout />
+      <SidebarLayout />
+      <Box
+        sx={{
+          ml: (theme) => `calc(${theme.spacing(7)})`,
+        }}
+      >
+        <Box>
+          <Outlet />
+        </Box>
       </Box>
     </Box>
   )
